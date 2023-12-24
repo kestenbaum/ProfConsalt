@@ -1,28 +1,27 @@
-'use strict'
-let burger = document.querySelector('.burger'),
-    nav = document.querySelector('.nav-list')
+//const
+const getSelectorBurgerMenu = document.querySelector('.burger')
+const getSelectorNavigateList = document.querySelector('.nav-list')
 
-
-burger.onclick = function (){
-    burger.classList.toggle('burger-active')
-    nav.classList.toggle('nav-list__active')
+//BurgerMenu functional
+getSelectorBurgerMenu.onclick = function (){
+    getSelectorBurgerMenu.classList.toggle('burger-active')
+    getSelectorNavigateList.classList.toggle('nav-list__active')
 }
-window.onclick = function (a){
-    let target = a.target
 
-    if(target.classList.contains('btn-link')) {
-        target.classList.toggle('btn__card--active')
-    }
+window.onclick = function (event){
+    const target = event.target
+
+    target.classList.contains('btn-link') && target.classList.toggle('btn__card--active')
+
     if(target.classList.contains('nav-link')) {
-        burger.classList.toggle('burger-active')
-        nav.classList.toggle('nav-list__active')
+        getSelectorBurgerMenu.classList.toggle('burger-active')
+        getSelectorNavigateList.classList.toggle('nav-list__active')
     }
 }
 
+//Sliders
 const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
     loop: true,
-    // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -46,9 +45,7 @@ const swiper = new Swiper('.swiper-container', {
 });
 
 const swip = new Swiper('.slider-container', {
-    // Optional parameters
     loop: true,
-    // Navigation arrows
     navigation: {
         nextEl: '.left',
         prevEl: '.right',

@@ -339,7 +339,7 @@ header {
 }
 
 .first-screen {
-  background: url("../img/bg.webp") no-repeat center;
+  background: url("assets/bg.webp") no-repeat center;
   background-size: cover;
   padding: 267px 0 183px 0;
 }
